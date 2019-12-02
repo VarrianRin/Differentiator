@@ -567,7 +567,7 @@ Element* Diff(const Element* elem) {
                     return MUL(COS(cR), dR);
 
                 case OPER_COS:
-                    return MUL(SIN(cR), dR);
+                    return MUL( MUL( NUM(-1), SIN(cR)), dR);
         }
     }
 
