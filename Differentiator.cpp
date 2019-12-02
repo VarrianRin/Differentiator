@@ -7,9 +7,9 @@
 #include <math.h>
 #include "Enum.h"
 
-// тех, количество объектов, упроститель для sin, cos, ln
+// Е€ДєЕ‘, Д™Г®Г«ДЌГ·ДєЕ„Е€ГўГ® Г®ГЎГєДєД™Е€Г®Гў, ГіДЏД‘Г®Е„Е€ДЌЕ€ДєГ«Гј Г¤Г«Л™ sin, cos, ln
 /*
-TreeOk, ненулевую инфу, цвета, nill,
+TreeOk, Г­ДєГ­ГіГ«ДєГўГіЕЈ ДЌГ­ГґГі, Г¶ГўДєЕ€Е•, nill,
 */
 
 #define CHECKNULLPTR(ptr) if(!ptr) { printf("\n%s: NULL POINTER TO "#ptr"!\n", __PRETTY_FUNCTION__); return NULL; }
@@ -109,22 +109,20 @@ int main() {
     char* code = WinReader("TreeCode.txt", SizeFile);
     tree.head = GetG(code);
 
-    //Simplifier(&tree);
-    TreeDump(&tree);
+    //TreeDump(&tree);
 
-    /*Tree diftree = {};
+    Tree diftree = {};
     TreeInit(&diftree);
 
     diftree.head = Diff(tree.head);
 
     //Simplifier(&diftree);
-    //SimplifyElem(diftree.head->right);
 
     TreeDump(&diftree);
 
     TreeCoder(&diftree, "DiffTreeCode.txt");
 
-    TreeKill(&diftree); */
+    TreeKill(&diftree); 
     TreeKill(&tree);
 
     return 0;
@@ -424,7 +422,7 @@ bool Decoder(Element* elem, const char* TreeCode, int* offset) {///////WITHOUT S
         Decoder(root, TreeCode, offset);
     }
 
-    sscanf(TreeCode + *offset, "%[^()]%n", data, &n_bytes); //символ пробела?
+    sscanf(TreeCode + *offset, "%[^()]%n", data, &n_bytes); //Е„ДЌД›ГўГ®Г« ДЏД‘Г®ГЎДєГ«Е•?
     *offset += n_bytes;
     ChangeData(elem, data);
 
@@ -762,7 +760,7 @@ int SearchFunc(const char* func) {
     CHECKNULLPTR(func)
 
     #define DEF_OPER(operator, name, code)     if (code > 19 && !strcmp(#operator, func) )\
-                                               return code;               //функции идут с кодом от 20
+                                               return code;               //ГґГіГ­Д™Г¶ДЌДЌ ДЌГ¤ГіЕ€ Е„ Д™Г®Г¤Г®Д› Г®Е€ 20
     #include "Operators.h"
 
     #undef DEF_OPER
